@@ -5,3 +5,5 @@ export interface IUserModel {
   avatar?: string;
   gender: string;
 }
+
+export const genders: ReadonlyArray<string> = ['F', 'M', 'O'];
