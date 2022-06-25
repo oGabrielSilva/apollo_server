@@ -15,7 +15,7 @@ class SessionController {
       await session.save();
       const user = await User.findById(session.object);
       if (!user) throw new Error('user does not exists');
-      return res.status(202).json({ message: 'OK', status: 202, user });
+      return res.status(200).json({ message: 'OK', status: 200, user });
     } catch (err) {
       if (err instanceof Error)
         return new BadRequest(res, 422, err.message).dispatch();
