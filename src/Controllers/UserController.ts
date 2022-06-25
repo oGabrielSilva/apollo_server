@@ -15,6 +15,7 @@ class UserController {
         throw new Error('email or password provided is invalid');
 
       const userByEmail = await User.findOne({ email }).select('+password');
+      console.log(userByEmail);
       if (!userByEmail) throw new Error('user does not exist');
       if (!bcryptjs.compareSync(password, userByEmail.password))
         throw new Error('password provided is incorrect');
