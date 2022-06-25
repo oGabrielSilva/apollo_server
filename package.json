@@ -3,7 +3,8 @@
   "version": "0.1.0",
   "author": "Gabriel Silva -> odev.gabriel@gmail.com",
   "scripts": {
-    "build": "tsc"
+    "build": "tsc",
+    "start": "node ./dist/app.js"
   },
   "devDependencies": {
     "@types/bcryptjs": "^2.4.2",
