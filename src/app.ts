@@ -6,7 +6,7 @@ import Router from './Routes/Routes';
 const app = e();
 
 mongoose
-  .connect(process.env.CONNECTSTRING as string)
+  .connect(process.env.MONGOSTRING as string)
   .then(() => app.emit('db'))
   .catch((e) => console.log('Mongoose connect error', e.message));
 
