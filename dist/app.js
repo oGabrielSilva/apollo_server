@@ -9,7 +9,7 @@ const mongoose_1 = __importDefault(require("mongoose"));
 const Routes_1 = __importDefault(require("./Routes/Routes"));
 const app = (0, express_1.default)();
 mongoose_1.default
-    .connect(process.env.CONNECTSTRING)
+    .connect(process.env.MONGOSTRING)
     .then(() => app.emit('db'))
     .catch((e) => console.log('Mongoose connect error', e.message));
 app.use(express_1.default.urlencoded({ extended: true }));
