@@ -16,8 +16,9 @@ class UserController {
             if (!(0, isEmail_1.default)(email) || password.length < 8)
                 throw new Error('email or password provided is invalid');
             const userByEmail = await User_1.default.findOne({ email }).select('+password');
+            console.log(userByEmail);
             if (!userByEmail)
-                throw new Error('user does not exist');
+                throw new Error('oops... user does not exist');
             if (!bcryptjs_1.default.compareSync(password, userByEmail.password))
                 throw new Error('password provided is incorrect');
             const session = await SessionController_1.default.store(userByEmail._id, device);
