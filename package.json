@@ -1,10 +1,10 @@
 {
-  "name": "tail_book_api",
+  "name": "apollo_server",
   "version": "0.1.0",
   "author": "Gabriel Silva -> odev.gabriel@gmail.com",
   "scripts": {
     "build": "tsc",
-    "start": "tsc && node ./dist/app.js"
+    "start": "npx tsc && node ./dist/app.js"
   },
   "devDependencies": {
     "@types/bcryptjs": "^2.4.2",
