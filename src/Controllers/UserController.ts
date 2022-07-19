@@ -15,13 +15,13 @@ class UserController {
         throw new Error('email or password provided is invalid');
 
       const userByEmail = await User.findOne({ email }).select('+password');
-      console.log(userByEmail);
       if (!userByEmail) throw new Error('user does not exist');
       if (!bcryptjs.compareSync(password, userByEmail.password))
         throw new Error('password provided is incorrect');
 
+      const user = User.findById(userByEmail._id);
       const session = await SessionController.store(userByEmail._id, device);
-      return res.status(200).json({ session });
+      return res.status(200).json({ session, user });
     } catch (err) {
       if (err instanceof Error)
         return new BadRequest(res, 422, err.message).dispatch();
